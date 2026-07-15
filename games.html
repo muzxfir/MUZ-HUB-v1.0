@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MUZ HUB - Games</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">MUZ <span>HUB</span></div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="tools.html">Tools</a>
+<a href="games.html">Games</a>
+<a href="blog.html">Blog</a>
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+<h1>Online Games</h1>
+
+<p>Play fun games for free</p>
+
+<input type="text" id="gameSearch" placeholder="Search games...">
+
+</section>
+
+
+
+<section class="cards">
+
+
+<div class="card">
+<h2>❌⭕ Tic Tac Toe</h2>
+<p>Classic X and O game.</p>
+<button>Play</button>
+</div>
+
+
+<div class="card">
+<h2>🐍 Snake Game</h2>
+<p>Control the snake and collect points.</p>
+<button>Play</button>
+</div>
+
+
+<div class="card">
+<h2>🧩 Puzzle Game</h2>
+<p>Test your brain skills.</p>
+<button>Play</button>
+</div>
+
+
+<div class="card">
+<h2>🧠 Memory Game</h2>
+<p>Match the cards.</p>
+<button>Play</button>
+</div>
+
+
+<div class="card">
+<h2>🔢 2048 Game</h2>
+<p>Join numbers and reach 2048.</p>
+<button>Play</button>
+</div>
+
+
+<div class="card">
+<h2>🏃 Runner Game</h2>
+<p>Endless running fun.</p>
+<button>Play</button>
+</div>
+
+
+</section>
+
+
+
+<footer>
+
+<p>© 2026 MUZ HUB</p>
+
+</footer>
+
+
+
+<script>
+
+const search = document.getElementById("gameSearch");
+
+
+search.addEventListener("keyup",()=>{
+
+let value = search.value.toLowerCase();
+
+
+document.querySelectorAll(".card").forEach(card=>{
+
+
+let text = card.innerText.toLowerCase();
+
+
+card.style.display = text.includes(value)
+? "block"
+: "none";
+
+
+});
+
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
