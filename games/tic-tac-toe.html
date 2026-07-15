@@ -1,176 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MUZ HUB - Tic Tac Toe</title>
-
-<link rel="stylesheet" href="../style.css">
-
-<style>
-
-.game {
-display:grid;
-grid-template-columns:repeat(3,100px);
-gap:10px;
-justify-content:center;
-margin-top:30px;
-}
-
-.box{
-width:100px;
-height:100px;
-font-size:40px;
-background:#161616;
-color:white;
-border:1px solid #00aaff;
-cursor:pointer;
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
 <header>
 
-<div class="logo">MUZ <span>HUB</span></div>
-
-<nav>
-<a href="../index.html">Home</a>
-<a href="../games.html">Games</a>
-</nav>
-
-</header>
-
-
-
-<section class="hero">
-
-<h1>❌⭕ Tic Tac Toe</h1>
-
-<p id="status">Player X Turn</p>
-
-
-<div class="game">
-
-<button class="box"></button>
-<button class="box"></button>
-<button class="box"></button>
-
-<button class="box"></button>
-<button class="box"></button>
-<button class="box"></button>
-
-<button class="box"></button>
-<button class="box"></button>
-<button class="box"></button>
-
+<div class="logo">
+MUZ <span>HUB</span>
 </div>
 
 
-<br>
-
-<button onclick="resetGame()">Restart</button>
-
-
-</section>
+<div class="menu-btn" onclick="toggleMenu()">
+☰
+</div>
 
 
+<nav id="navMenu">
 
-<footer>
+<a href="../index.html">Home</a>
+<a href="../tools.html">Tools</a>
+<a href="../games.html">Games</a>
+<a href="../blog.html">Blog</a>
 
-<p>© 2026 MUZ HUB</p>
+</nav>
 
-</footer>
-
-
-
-<script>
-
-let boxes=document.querySelectorAll(".box");
-
-let player="X";
-
-
-let win=[
-[0,1,2],
-[3,4,5],
-[6,7,8],
-[0,3,6],
-[1,4,7],
-[2,5,8],
-[0,4,8],
-[2,4,6]
-];
-
-
-boxes.forEach(box=>{
-
-box.onclick=()=>{
-
-if(box.innerHTML==""){
-
-box.innerHTML=player;
-
-check();
-
-player = player=="X" ? "O":"X";
-
-document.getElementById("status").innerHTML=
-"Player "+player+" Turn";
-
-}
-
-}
-
-});
-
-
-function check(){
-
-for(let w of win){
-
-let a=boxes[w[0]].innerHTML;
-let b=boxes[w[1]].innerHTML;
-let c=boxes[w[2]].innerHTML;
-
-
-if(a && a==b && b==c){
-
-alert(a+" Wins!");
-
-resetGame();
-
-}
-
-}
-
-}
-
-
-
-function resetGame(){
-
-boxes.forEach(box=>box.innerHTML="");
-
-player="X";
-
-document.getElementById("status").innerHTML=
-"Player X Turn";
-
-}
-
-
-</script>
-
-
-</body>
-
-</html>
+</header>
