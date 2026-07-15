@@ -8,7 +8,7 @@
 
 <title>MUZ HUB - Tools, Games & Tech</title>
 
-<meta name="description" content="MUZ HUB provides free online tools, games and technology guides.">
+<meta name="description" content="MUZ HUB - Free online tools, games and technology guides.">
 
 <link rel="icon" type="image/png" href="images/favicon.png">
 
@@ -27,7 +27,12 @@ MUZ <span>HUB</span>
 </div>
 
 
-<nav>
+<div class="menu-btn" onclick="toggleMenu()">
+☰
+</div>
+
+
+<nav id="navMenu">
 
 <a href="index.html">Home</a>
 <a href="tools.html">Tools</a>
@@ -36,13 +41,14 @@ MUZ <span>HUB</span>
 
 </nav>
 
+
 </header>
 
 
 
 
-<section class="hero">
 
+<section class="hero">
 
 <h1>
 Welcome to MUZ HUB 🚀
@@ -50,15 +56,14 @@ Welcome to MUZ HUB 🚀
 
 
 <p>
-Tools. Games. Tech. All in One.
+Tools • Games • Technology • Everything in One Place
 </p>
 
 
 <input 
-type="text" 
+type="text"
 placeholder="Search MUZ HUB..."
 >
-
 
 
 </section>
@@ -68,7 +73,6 @@ placeholder="Search MUZ HUB..."
 
 
 <section class="cards">
-
 
 
 <div class="card">
@@ -121,7 +125,7 @@ Play Games
 
 <div class="card">
 
-<h2>📝 Tech Blog</h2>
+<h2>📝 Blog</h2>
 
 <p>
 Latest technology tips and guides.
@@ -141,7 +145,6 @@ Read Blog
 
 
 
-
 </section>
 
 
@@ -149,7 +152,6 @@ Read Blog
 
 
 <section class="hero">
-
 
 <h1>
 Why MUZ HUB?
@@ -174,6 +176,22 @@ Fast • Simple • Useful • Free
 </p>
 
 </footer>
+
+
+
+
+
+<script>
+
+function toggleMenu(){
+
+document
+.getElementById("navMenu")
+.classList.toggle("active");
+
+}
+
+</script>
 
 
 
