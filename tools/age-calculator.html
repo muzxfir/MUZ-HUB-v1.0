@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MUZ HUB - Age Calculator</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">MUZ <span>HUB</span></div>
+
+<nav>
+<a href="../index.html">Home</a>
+<a href="../tools.html">Tools</a>
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+<h1>🎂 Age Calculator</h1>
+
+<p>Calculate your exact age</p>
+
+
+<input type="date" id="birthdate">
+
+
+<br><br>
+
+
+<button onclick="calculateAge()">
+Calculate
+</button>
+
+
+<h2 id="result"></h2>
+
+
+</section>
+
+
+
+<footer>
+
+<p>© 2026 MUZ HUB</p>
+
+</footer>
+
+
+
+<script>
+
+function calculateAge(){
+
+let birth =
+new Date(document.getElementById("birthdate").value);
+
+
+let today = new Date();
+
+
+let age =
+today.getFullYear() - birth.getFullYear();
+
+
+let month =
+today.getMonth() - birth.getMonth();
+
+
+if(month < 0 || 
+(month === 0 && today.getDate() < birth.getDate()))
+{
+age--;
+}
+
+
+document.getElementById("result").innerHTML =
+"Your Age is " + age + " years";
+
+
+}
+
+</script>
+
+
+</body>
+
+</html>
