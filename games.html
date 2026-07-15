@@ -8,7 +8,9 @@
 
 <title>MUZ HUB - Games</title>
 
-<meta name="description" content="Play free online games at MUZ HUB">
+<meta name="description" content="Play free online games on MUZ HUB">
+
+<link rel="icon" type="image/png" href="images/favicon.png">
 
 <link rel="stylesheet" href="style.css">
 
@@ -20,12 +22,18 @@
 
 <header>
 
+
 <div class="logo">
 MUZ <span>HUB</span>
 </div>
 
 
-<nav>
+<div class="menu-btn" onclick="toggleMenu()">
+☰
+</div>
+
+
+<nav id="navMenu">
 
 <a href="index.html">Home</a>
 <a href="tools.html">Tools</a>
@@ -34,21 +42,28 @@ MUZ <span>HUB</span>
 
 </nav>
 
+
 </header>
+
 
 
 
 
 <section class="hero">
 
-<h1>🎮 Online Games</h1>
+<h1>
+🎮 Online Games
+</h1>
 
-<p>Play fun games for free</p>
+
+<p>
+Play fun games for free
+</p>
 
 
 <input 
-type="text" 
-id="gameSearch" 
+id="gameSearch"
+type="text"
 placeholder="Search games..."
 >
 
@@ -67,7 +82,9 @@ placeholder="Search games..."
 
 <h2>❌⭕ Tic Tac Toe</h2>
 
-<p>Classic X and O game.</p>
+<p>
+Classic X and O game.
+</p>
 
 
 <a href="games/tic-tac-toe.html">
@@ -77,7 +94,6 @@ Play Now
 </button>
 
 </a>
-
 
 </div>
 
@@ -89,7 +105,9 @@ Play Now
 
 <h2>🧠 Memory Game</h2>
 
-<p>Match the same symbols.</p>
+<p>
+Match the same symbols.
+</p>
 
 
 <a href="games/memory-game.html">
@@ -100,9 +118,7 @@ Play Now
 
 </a>
 
-
 </div>
-
 
 
 
@@ -112,7 +128,9 @@ Play Now
 
 <h2>🐍 Snake Game</h2>
 
-<p>Control the snake and collect points.</p>
+<p>
+Control the snake and collect points.
+</p>
 
 
 <a href="games/snake.html">
@@ -123,10 +141,7 @@ Play Now
 
 </a>
 
-
 </div>
-
-
 
 
 
@@ -151,9 +166,18 @@ Play Now
 <script>
 
 
-const search =
-document.getElementById("gameSearch");
+function toggleMenu(){
 
+document
+.getElementById("navMenu")
+.classList.toggle("active");
+
+}
+
+
+
+let search =
+document.getElementById("gameSearch");
 
 
 search.addEventListener("keyup",function(){
@@ -167,29 +191,18 @@ search.value.toLowerCase();
 document.querySelectorAll(".card").forEach(card=>{
 
 
-let text =
-card.innerText.toLowerCase();
-
-
-
-if(text.includes(value)){
-
-card.style.display="block";
-
-}
-
-else{
-
-card.style.display="none";
-
-}
+card.style.display =
+card.innerText.toLowerCase().includes(value)
+?
+"block"
+:
+"none";
 
 
 });
 
 
 });
-
 
 
 </script>
