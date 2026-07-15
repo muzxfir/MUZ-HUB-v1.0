@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MUZ HUB - EMI Calculator</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">MUZ <span>HUB</span></div>
+
+<nav>
+<a href="../index.html">Home</a>
+<a href="../tools.html">Tools</a>
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+<h1>💰 EMI Calculator</h1>
+
+<p>Calculate your monthly loan EMI</p>
+
+
+<input type="number" id="loan" placeholder="Loan Amount">
+
+
+<br><br>
+
+
+<input type="number" id="rate" placeholder="Interest Rate (%)">
+
+
+<br><br>
+
+
+<input type="number" id="years" placeholder="Loan Period (Years)">
+
+
+<br><br>
+
+
+<button onclick="calculateEMI()">
+Calculate EMI
+</button>
+
+
+<h2 id="result"></h2>
+
+
+</section>
+
+
+
+<footer>
+
+<p>© 2026 MUZ HUB</p>
+
+</footer>
+
+
+
+<script>
+
+function calculateEMI(){
+
+let loan =
+parseFloat(document.getElementById("loan").value);
+
+let rate =
+parseFloat(document.getElementById("rate").value);
+
+let years =
+parseFloat(document.getElementById("years").value);
+
+
+if(!loan || !rate || !years){
+
+alert("Please enter all details");
+return;
+
+}
+
+
+let monthlyRate =
+rate / 12 / 100;
+
+
+let months =
+years * 12;
+
+
+let emi =
+(loan * monthlyRate * Math.pow(1 + monthlyRate, months)) /
+(Math.pow(1 + monthlyRate, months) - 1);
+
+
+
+document.getElementById("result").innerHTML =
+"Monthly EMI: " + emi.toFixed(2);
+
+
+}
+
+</script>
+
+
+</body>
+
+</html>
