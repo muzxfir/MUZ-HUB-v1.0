@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0b0b0b;
+    color: white;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #111;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00aaff;
+}
+
+.logo span {
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #00aaff;
+}
+
+
+/* Hero */
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+
+#search {
+    width: 80%;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+
+/* Cards */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px 8%;
+    flex-wrap: wrap;
+}
+
+
+.card {
+    background: #161616;
+    width: 300px;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #222;
+}
+
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #00aaff;
+}
+
+
+.card h2 {
+    margin-bottom: 15px;
+}
+
+
+.card p {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+
+button {
+    background: #00aaff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background: #0088cc;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #111;
+    margin-top: 40px;
+    color: #aaa;
+}
+
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 8px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+}
