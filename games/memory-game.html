@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MUZ HUB - Memory Game</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+
+.game{
+display:grid;
+grid-template-columns:repeat(4,70px);
+gap:10px;
+justify-content:center;
+margin-top:30px;
+}
+
+.card-box{
+width:70px;
+height:70px;
+background:#161616;
+border:1px solid #00aaff;
+color:white;
+font-size:30px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">MUZ <span>HUB</span></div>
+
+<nav>
+<a href="../index.html">Home</a>
+<a href="../games.html">Games</a>
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+<h1>🧠 Memory Game</h1>
+
+<p>Match the same symbols</p>
+
+
+<div class="game" id="game"></div>
+
+
+<br>
+
+<button onclick="startGame()">Restart</button>
+
+
+</section>
+
+
+
+<footer>
+
+<p>© 2026 MUZ HUB</p>
+
+</footer>
+
+
+
+<script>
+
+let symbols=[
+"🍎","🍎",
+"🍌","🍌",
+"🍇","🍇",
+"🍒","🍒",
+"⭐","⭐",
+"🔥","🔥",
+"🚀","🚀",
+"💎","💎"
+];
+
+
+let first=null;
+let second=null;
+let lock=false;
+
+
+function startGame(){
+
+let game=document.getElementById("game");
+
+game.innerHTML="";
+
+
+symbols.sort(()=>0.5-Math.random());
+
+
+symbols.forEach(symbol=>{
+
+let box=document.createElement("button");
+
+box.className="card-box";
+
+box.innerHTML="❓";
+
+box.dataset.symbol=symbol;
+
+
+box.onclick=function(){
+
+if(lock || this.innerHTML!="❓")
+return;
+
+
+this.innerHTML=this.dataset.symbol;
+
+
+if(!first){
+
+first=this;
+
+}else{
+
+second=this;
+
+checkMatch();
+
+}
+
+};
+
+
+game.appendChild(box);
+
+
+});
+
+
+first=null;
+second=null;
+
+}
+
+
+
+function checkMatch(){
+
+if(first.dataset.symbol==second.dataset.symbol){
+
+first=null;
+second=null;
+
+}else{
+
+lock=true;
+
+setTimeout(()=>{
+
+first.innerHTML="❓";
+second.innerHTML="❓";
+
+first=null;
+second=null;
+lock=false;
+
+},800);
+
+
+}
+
+}
+
+
+startGame();
+
+
+</script>
+
+
+</body>
+
+</html>
