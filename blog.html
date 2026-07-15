@@ -8,7 +8,7 @@
 
 <title>MUZ HUB - Blog</title>
 
-<meta name="description" content="MUZ HUB tech tips, tutorials and useful guides.">
+<meta name="description" content="MUZ HUB technology tips, guides and articles">
 
 <link rel="icon" type="image/png" href="images/favicon.png">
 
@@ -22,12 +22,18 @@
 
 <header>
 
+
 <div class="logo">
 MUZ <span>HUB</span>
 </div>
 
 
-<nav>
+<div class="menu-btn" onclick="toggleMenu()">
+☰
+</div>
+
+
+<nav id="navMenu">
 
 <a href="index.html">Home</a>
 <a href="tools.html">Tools</a>
@@ -36,16 +42,24 @@ MUZ <span>HUB</span>
 
 </nav>
 
+
 </header>
+
 
 
 
 
 <section class="hero">
 
-<h1>📝 MUZ HUB Blog</h1>
+<h1>
+📝 MUZ HUB Blog
+</h1>
 
-<p>Latest Technology Tips & Guides</p>
+
+<p>
+Technology Tips & Useful Guides
+</p>
+
 
 </section>
 
@@ -62,7 +76,7 @@ MUZ <span>HUB</span>
 <h2>📱 Android Tips</h2>
 
 <p>
-Learn useful Android features and tricks.
+Useful Android tricks and features.
 </p>
 
 
@@ -82,10 +96,10 @@ Read More
 
 <div class="card">
 
-<h2>💻 Website Development</h2>
+<h2>💻 Web Development</h2>
 
 <p>
-Learn HTML, CSS and JavaScript basics.
+Learn HTML, CSS and JavaScript.
 </p>
 
 
@@ -108,7 +122,7 @@ Read More
 <h2>🤖 AI Tools</h2>
 
 <p>
-Discover useful AI tools and updates.
+Explore useful AI technologies.
 </p>
 
 
@@ -138,6 +152,24 @@ Read More
 </p>
 
 </footer>
+
+
+
+
+
+<script>
+
+
+function toggleMenu(){
+
+document
+.getElementById("navMenu")
+.classList.toggle("active");
+
+}
+
+
+</script>
 
 
 
