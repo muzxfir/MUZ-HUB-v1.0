@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MUZ HUB - Snake Game</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+
+canvas{
+background:#111;
+border:2px solid #00aaff;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">MUZ <span>HUB</span></div>
+
+<nav>
+<a href="../index.html">Home</a>
+<a href="../games.html">Games</a>
+</nav>
+
+</header>
+
+
+
+<section class="hero">
+
+<h1>🐍 Snake Game</h1>
+
+<canvas id="canvas" width="300" height="300"></canvas>
+
+<br><br>
+
+<button onclick="restart()">Restart</button>
+
+</section>
+
+
+
+<footer>
+
+<p>© 2026 MUZ HUB</p>
+
+</footer>
+
+
+
+<script>
+
+let canvas=document.getElementById("canvas");
+let ctx=canvas.getContext("2d");
+
+
+let snake;
+let food;
+let direction;
+let score;
+
+
+function start(){
+
+snake=[
+{x:150,y:150}
+];
+
+food={
+x:Math.floor(Math.random()*15)*20,
+y:Math.floor(Math.random()*15)*20
+};
+
+
+direction="RIGHT";
+score=0;
+
+}
+
+
+document.addEventListener("keydown",function(e){
+
+if(e.key=="ArrowUp") direction="UP";
+if(e.key=="ArrowDown") direction="DOWN";
+if(e.key=="ArrowLeft") direction="LEFT";
+if(e.key=="ArrowRight") direction="RIGHT";
+
+});
+
+
+
+function draw(){
+
+
+ctx.clearRect(0,0,300,300);
+
+
+
+snake.forEach((part)=>{
+
+ctx.fillStyle="#00aaff";
+
+ctx.fillRect(
+part.x,
+part.y,
+20,
+20
+);
+
+});
+
+
+
+ctx.fillStyle="red";
+
+ctx.fillRect(
+food.x,
+food.y,
+20,
+20
+);
+
+
+
+let head={...snake[0]};
+
+
+
+if(direction=="UP") head.y-=20;
+if(direction=="DOWN") head.y+=20;
+if(direction=="LEFT") head.x-=20;
+if(direction=="RIGHT") head.x+=20;
+
+
+
+if(
+head.x<0 ||
+head.y<0 ||
+head.x>=300 ||
+head.y>=300
+){
+
+alert("Game Over");
+
+start();
+
+return;
+
+}
+
+
+
+snake.unshift(head);
+
+
+
+if(head.x==food.x && head.y==food.y){
+
+score++;
+
+food={
+x:Math.floor(Math.random()*15)*20,
+y:Math.floor(Math.random()*15)*20
+};
+
+
+}else{
+
+snake.pop();
+
+}
+
+
+}
+
+
+
+function game(){
+
+draw();
+
+}
+
+
+function restart(){
+
+start();
+
+}
+
+
+
+start();
+
+setInterval(game,150);
+
+
+</script>
+
+
+</body>
+
+</html>
