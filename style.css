@@ -5,7 +5,6 @@
     font-family:Arial, sans-serif;
 }
 
-
 body{
     background:#080808;
     color:white;
@@ -22,7 +21,7 @@ header{
     background:#111;
     position:sticky;
     top:0;
-    z-index:100;
+    z-index:1000;
 }
 
 
@@ -39,17 +38,30 @@ header{
 }
 
 
+nav{
+    display:flex;
+}
+
+
 nav a{
     color:white;
     text-decoration:none;
     margin-left:20px;
     font-size:16px;
-    transition:.3s;
 }
 
 
 nav a:hover{
     color:#00aaff;
+}
+
+
+/* Mobile Menu Button */
+
+.menu-btn{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
 }
 
 
@@ -75,36 +87,30 @@ nav a:hover{
 }
 
 
-
 input{
     width:80%;
     max-width:500px;
     padding:15px;
+    border-radius:30px;
     border:none;
     outline:none;
-    border-radius:30px;
     font-size:16px;
 }
-
 
 
 
 /* Cards */
 
 .cards{
-
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
     gap:25px;
     padding:40px 8%;
-
 }
 
 
-
 .card{
-
     background:#151515;
     width:300px;
     padding:30px;
@@ -112,43 +118,30 @@ input{
     border-radius:15px;
     border:1px solid #222;
     transition:.3s;
-
 }
-
 
 
 .card:hover{
-
     transform:translateY(-10px);
     border-color:#00aaff;
-
 }
-
 
 
 .card h2{
-
     margin-bottom:15px;
-
 }
-
 
 
 .card p{
-
     color:#aaa;
     margin-bottom:20px;
-
 }
-
 
 
 
 /* Buttons */
 
-
 button{
-
     background:#00aaff;
     color:white;
     border:none;
@@ -156,106 +149,89 @@ button{
     border-radius:30px;
     cursor:pointer;
     font-size:15px;
-
 }
-
 
 
 button:hover{
-
     background:#0088cc;
-
 }
 
 
-
 a{
-
     text-decoration:none;
-
 }
 
 
 
 /* Footer */
 
-
 footer{
-
     text-align:center;
     background:#111;
     padding:25px;
     color:#aaa;
     margin-top:50px;
-
 }
 
 
 
-/* Game Style */
-
+/* Game */
 
 .game{
-
     display:flex;
     justify-content:center;
-
 }
 
 
 
-
-/* Mobile */
+/* Mobile Responsive */
 
 @media(max-width:768px){
 
 
 header{
-
     flex-direction:column;
     gap:15px;
+}
 
+
+.menu-btn{
+    display:block;
 }
 
 
 nav{
-
+    display:none;
+    flex-direction:column;
+    width:100%;
     text-align:center;
+    background:#111;
+    padding:20px;
+}
 
+
+nav.active{
+    display:flex;
 }
 
 
 nav a{
-
-    display:inline-block;
-    margin:8px;
-
+    margin:10px;
 }
-
 
 
 .hero h1{
-
     font-size:32px;
-
 }
-
 
 
 .cards{
-
     padding:20px;
-
 }
-
 
 
 .card{
-
     width:100%;
-
 }
-
-
 
 }
